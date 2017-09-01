@@ -16,10 +16,20 @@ http://www.springframework.org/schema/cache http://www.springframework.org/schem
 
 	</context:annotation-config>
 	<context:component-scan base-package="com.spedia.*" />
-	<bean id="mongo" class="com.mongodb.Mongo">
-		<constructor-arg value="localhost:27017" />
-		<constructor-arg ref="dbOptions" />
-	</bean>
+	<bean id="mailProperties"
+    class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+ 		<property name="location" value="classpath:application.properties" />
+ 	</bean>
+	<bean class="com.mongodb.MongoURI" id="mongoURI">
+        <constructor-arg value="mongodb://admin:admin123@ds111754.mlab.com:11754/spedia"  />
+    </bean>
+    <bean class="com.mongodb.Mongo" id="mongo">
+        <constructor-arg ref="mongoURI" />
+    </bean>
+    <bean id="mongoCredentials" class="org.springframework.data.authentication.UserCredentials">
+    		 <constructor-arg value="admin"  />
+   			 <constructor-arg value="admin123"  />
+    </bean>
 	<bean id="dbOptions" class="com.mongodb.MongoOptions">
                <property name="connectionsPerHost" value="10" />
                <property name="threadsAllowedToBlockForConnectionMultiplier" value="10" />
@@ -31,6 +41,7 @@ http://www.springframework.org/schema/cache http://www.springframework.org/schem
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 		<constructor-arg name="mongo" ref="mongo" />
 		<constructor-arg name="databaseName" value="spedia" />
+		<constructor-arg name="userCredentials" ref="mongoCredentials"/>
 	</bean>
 	<bean id="mongoDao" class="com.spedia.dao.MongoDaoImpl"
 		init-method="init">

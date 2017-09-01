@@ -1,0 +1,336 @@
+.search-school-by {
+    margin: auto;
+    width: 100%;
+    background: #fcfcfc;
+    position: relative;
+    border-bottom: 2px solid #f2f2f2;
+    font-family: Arial,Helvetica,sans-serif;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.dnar {
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 12px solid #f2f2f2;
+	position: absolute;
+	bottom: -13px;
+	left: 50%;
+	margin-left: -6px
+}
+
+.search-school-by-tabs {
+	background: #fcedb2;
+	height: 50px;
+	border-bottom: 1px solid #f9deaa;
+	margin-bottom: 20px;
+	width: 100%;
+	float: left;
+	position:relative
+}
+
+.search-school-by-tabs h2 {
+    font-size: 22px;
+    color: #585757;
+    line-height: 55px;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    letter-spacing: -1px;
+    position: absolute;
+    left: 20px;
+}
+
+.search-school-by-tabs ul {
+	margin: 10px 0 0 170px;
+    padding: 0;
+}
+
+.search-school-by-tabs li {
+float: left;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    height: 40px;
+    line-height: 40px;
+    margin-right: .5%;
+    border-radius: 2px 2px 0 0;
+    width: 31.5%;
+    text-align: center;
+}
+.search-school-by-tabs li img{ width:auto !Important}
+
+.search-school-by-tabs li.vsble {
+	overflow: visible;
+}
+
+.search-school-by-tabs li span {
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	margin-left: -5px;
+}
+
+.search-school-by-tabs li:nth-child(1) {
+	background: #ed2432
+}
+
+.search-school-by-tabs li:nth-child(1) span {
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #ed2432;
+}
+
+.search-school-by-tabs li:nth-child(2) {
+	background: #3e82d3
+}
+
+.search-school-by-tabs li:nth-child(2) span {
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #3e82d3;
+}
+
+.search-school-by-tabs li:nth-child(3) {
+	background: #c7499f
+}
+
+.search-school-by-tabs li:nth-child(3) span {
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #c7499f;
+}
+
+.search-school-by-tabs li a {
+	color: #ffffff;
+	text-decoration: none;
+			display:block
+}
+
+.clr {
+	clear: both
+}
+
+.search-school-area {
+	position: relative;
+	overflow: hidden;
+	padding: 5px 5% 0px 5%;
+	width: 100%;
+	float: left;
+	overflow: hidden
+}
+
+.search-school-area label select {
+	background: #ffffff;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	padding: 10px 5%;
+	font-size: 13px;
+	color: #444444;
+	border: none;
+	box-shadow: 0px 0px 1px #777777;
+	outline: none
+}
+
+.search-school-area label input {
+	background: #ffffff url(images/search-icn.png) no-repeat 10px 50%;
+	width:100%;
+	height: 40px;
+	padding: 0 5% 0 10%;
+	font-size: 13px;
+	color: #444444;
+	border: none;
+	box-shadow: 0px 0px 1px #777777;
+	outline: none
+}
+
+.search-school-area label input.sbmt {
+	background: #28c6ae;
+	width: 100%;
+	padding: 0;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	box-shadow: 0px 0px 5px #28c6ae;
+}
+
+.search-school-area label:nth-child(1) {
+	float: left;
+	width: 40%;
+	margin-right: 2%;
+	position: relative;
+	animation: ff 1s ease-in-out;
+	-moz-animation: ff 1s ease-in-out;
+	-webkit-animation: ff 1s ease-in-out;
+	left: 0px;
+}
+
+.search-school-area label:nth-child(2) {
+	float: left;
+	width: 58%;
+	position: relative;
+	animation: ss 1s ease-in-out;
+	-moz-animation: ss 1s ease-in-out;
+	-webkit-animation: ss 1s ease-in-out;
+	right: 0px;
+}
+
+
+
+.search-school-kmwise {
+	position: relative;
+	overflow: hidden;
+	padding: 5px 0 0px 5%;
+	width: 100%;
+	float: left;
+	overflow: hidden
+}
+
+.search-school-kmwise label select {
+	background: #ffffff;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	padding: 10px 5%;
+	font-size: 13px;
+	color: #444444;
+	border: none;
+	box-shadow: 0px 0px 1px #777777;
+	outline: none
+}
+
+.search-school-kmwise label input {
+	background: #ffffff url(images/search-icn.png) no-repeat 10px 50%;
+	width: 100%;
+	height: 40px;
+	padding: 0 5% 0 10%;
+	font-size: 13px;
+	color: #444444;
+	border: none;
+	box-shadow: 0px 0px 1px #777777;
+	outline: none
+}
+
+.search-school-kmwise label input.sbmt {
+	background: #28c6ae;
+	width: 100%;
+	padding: 0;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	box-shadow: 0px 0px 5px #28c6ae;
+}
+
+.search-school-kmwise label:nth-child(1) {
+	float: left;
+	width: 33%;
+	margin-right: 2%;
+	position: relative;
+}
+
+.search-school-kmwise label:nth-child(2) {
+	float: left;
+	width: 45.5%;
+	margin-right: 2%;
+	position: relative;
+}
+
+.search-school-kmwise label:nth-child(3) {
+	float: left;
+	width: 25.5%;
+	margin-right: 2%;
+	position: relative;
+	display:none;
+}
+
+.search-school-kmwise label:nth-child(4) {
+	float: left;
+	width: 15%;
+	position: relative;
+		display:none;
+}
+
+.search-school-kmwise label:nth-child(5) {
+	float: left;
+	width: 15%;
+	position: relative;
+	
+}
+
+@
+keyframes ff {
+	from {left: -100%;
+}
+
+to {
+	left: 0px;
+}
+
+}
+@
+keyframes ss {
+	from {right: -100%;
+}
+
+to {
+	right: 0px;
+}
+
+}
+@media screen and (max-width:650px) {
+	.search-school-by-tabs {
+		height: auto;
+		padding: 0 5%
+	}
+	.search-school-by-tabs ul{ margin:10px 0 0 0}
+	.search-school-by-tabs li {
+		padding: 0 10px;
+		width:32.5%;
+	}
+	.search-school-by-tabs li a {
+		font-size:13px;
+
+	}
+		.search-school-by-tabs li img{ display:none !important}
+	.search-school-by-tabs h2 {
+		line-height: 20px;
+		margin: 15px 15px 5px 0;
+		position:static
+	}
+	.search-school-area label:nth-child(1) {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 15px
+	}
+	.search-school-area label:nth-child(2) {
+		width: 100%;
+	}
+	
+	
+	.search-school-kmwise label:nth-child(1) {
+width: 100%;
+		margin-right: 0;
+		margin-bottom: 15px
+}
+
+.search-school-kmwise label:nth-child(2) {
+width: 100%;
+		margin-right: 0;
+		margin-bottom: 15px
+}
+
+.search-school-kmwise label:nth-child(5) {
+width: 100%;
+}
+
+
+
+.search-school-area label select{widdth:98%}
+.search-school-area label input	{widdth:98%}
+.search-school-kmwise label select{widdth:98%}
+.search-school-kmwise label input{widdth:98%}
+}

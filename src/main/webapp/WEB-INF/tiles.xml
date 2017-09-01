@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="mainTemplate" template="/WEB-INF/pages/mainLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/pages/schoolHeader.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/pages/schoolFooter.jsp" />
+	</definition>
+	<!-- COMPANY RELATED PAGES -->
+	<definition name="schoolHome" extends="mainTemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/school/schoolHome.jsp" />
+	</definition>
+	<definition name="news" extends="mainTemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/news/news_content.jsp" />
+	</definition>
+	<definition name="review_moderation" extends="mainTemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/reviews/review_moderation.jsp" />
+	</definition>
+	<definition name="writeReview" extends="mainTemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/reviews/writeReview.jsp" />
+	</definition>
+	<definition name="searchResult" extends="mainTemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/search/searchResult.jsp" />
+	</definition>
+	<definition name="home" extends="mainTemplate">
+		<put-attribute name="body" value="/WEB-INF/pages/homePage.jsp" />
+	</definition>
+	<definition name="404" extends="mainTemplate">
+		<put-attribute name="body" value="/WEB-INF/pages/404.jsp" />
+	</definition>
+	<definition name="login" extends="mainTemplate">
+		<put-attribute name="body" value="/WEB-INF/pages/login.jsp" />
+	</definition>
+	<definition name="admin" extends="mainTemplate">
+		<put-attribute name="body" value="/WEB-INF/pages/admin.jsp" />
+	</definition>
+	<definition name="userHome" extends="mainTemplate">
+		<put-attribute name="body" value="/WEB-INF/pages/userHome.jsp" />
+	</definition>
+	<definition name="403" extends="mainTemplate">
+		<put-attribute name="body" value="/WEB-INF/pages/403.jsp" />
+	</definition>
+	<definition name="500" extends="mainTemplate">
+		<put-attribute name="body" value="/WEB-INF/pages/500.jsp" />
+	</definition>
+	<definition name="addNews" extends="mainTemplate">
+		<put-attribute name="body" value="/WEB-INF/pages/news/news.jsp" />
+	</definition>
+	<definition name="editSchoolInfo" extends="mainTemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/school/editSchoolInfo.jsp" />
+	</definition>
+	<definition name="showSchoolInfo" extends="mainTemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/school/showSchoolInfo.jsp" />
+	</definition>
+	<definition name="flipkart_product" extends="mainTemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/flipkart_product.jsp" />
+	</definition>
+	<definition name="writeReviewPOPUP" extends="mainTemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/reviews/writeReview.jsp" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="footer" value="" />
+	</definition>
+	<definition name="searchContent" extends="mainTemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/searchContent.jsp" />
+	</definition>
+    <definition name="compareSchool" extends="mainTemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/pages/school/compareSchool.jsp" />
+	</definition>
+	<definition name="ask" extends="mainTemplate">
+		<put-attribute name="body" value="/WEB-INF/pages/news/ask.jsp" />
+	</definition>
+	<definition name="content_moderation" extends="mainTemplate">
+		<put-attribute name="body" value="/WEB-INF/pages/news/content_moderation.jsp" />
+	</definition>
+	<definition name="allAdmissionQuery" extends="mainTemplate">
+		<put-attribute name="body" value="/WEB-INF/pages/school/allAdmissionQuery.jsp" />
+	</definition>
+	<definition name="sitemap" extends="mainTemplate">
+		<put-attribute name="body" value="/WEB-INF/pages/news/sitemap.jsp" />
+	</definition>
+</tiles-definitions>

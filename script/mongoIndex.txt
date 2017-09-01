@@ -1,0 +1,119 @@
+db.fields_current.node.ensureIndex({"field_group.target_id":1}, {background : true});
+db.fields_current.node.ensureIndex({"alias":1}, {background : true});
+db.fields_current.node.ensureIndex({"tags":1}, {background : true});
+db.fields_current.node.ensureIndex({"location.province":1}, {background : true});
+db.fields_current.node.ensureIndex({"location.city":1}, {background : true});
+db.fields_current.node.ensureIndex({"type":1}, {background : true});
+db.fields_current.node.ensureIndex({"location.city":1,"type":1}, {background : true});
+db.fields_current.node.ensureIndex({"review.count":1}, {background : true});
+db.fields_current.node.ensureIndex({"url":1}, {background : true});
+db.fields_current.node.ensureIndex({"f":1}, {background : true});
+db.reviews.ensureIndex({"nid":1}, {background : true});
+db.reviews.ensureIndex({"status":1}, {background : true});
+db.fields_current.node.ensureIndex({"sd.AFF_NO":1}, {background : true});
+db.fields_current.node.ensureIndex({"schoolCode":1}, {background : true});
+db.fields_current.node.ensureIndex({"sd.SN":1}, {background : true});
+db.fields_current.node.ensureIndex({"changed":-1}, {background : true});
+
+db.reviews.ensureIndex({"nid":1}, {background : true});
+
+db.locationSearch.ensureIndex({"alias":1}, {background : true});
+
+db.fields_current.node.find().forEach( function (e) { 
+    if(e.type=='group'&&e.location!=null){
+       c = [ parseFloat(e.location.longitude), parseFloat(e.location.latitude)];
+       t = "Point";
+       var l={"coordinates":c,"type":t};
+        e.loc=l;
+        db.fields_current.node.save(e); 
+        }
+ });
+ 
+db.fields_current.node.ensureIndex( { loc : "2dsphere" } );
+
+db.fields_current.node_qc.update(
+   {"_id" : 2300},
+   { $unset: { coords: ""} }
+)
+db.fields_current.node.find( {
+     loc :
+       { $near :
+          {
+            $geometry : {
+               type : "Point" ,
+               coordinates : [77.1139979999999952, 28.7166290000000011] },
+               $maxDistance: 100
+          }
+       }
+} )
+
+======================================================review update==================================
+db.reviews.aggregate([{ $match: {"status": 1 } },
+         	     { $group: { _id: "$nid", total: { $sum: 1 } } },
+		     { $sort: { total: -1 } },
+		     { $out : "review_count" }
+                    ])
+var reviews=db.getCollection('review_count').find();
+reviews.forEach(function(doc) {
+    var node=db.getCollection('fields_current.node').findOne({_id:doc._id});
+ //   print(node.title);
+    try {
+     print(doc._id);
+    print(doc.total);
+    print(node.review.count);
+    node.review.count=doc.total;
+    print(node.review.count);
+    db.getCollection('fields_current.node').save(node);
+}catch(err) {
+print(err);
+}
+   
+});
+http://test.schoolspedia.com/spedia/searchSchool.html?distance=2&longitude=77.1139979999999952&latitude=28.7166290000000011
+
+=======================Tagging goverment school===========================================
+db.getCollection('fields_current.node').update(
+   { "type" : "group","title" : { $regex : /GOVT/i }},
+   { $addToSet: {"tags":"GOVT"} },false,true
+)
+db.getCollection('fields_current.node').update(
+   { "type" : "group","title" : { $regex : /SARVODAYA/i }},
+   { $addToSet: {"tags":"SARVODAYA"} },false,true
+)
+db.getCollection('fields_current.node').update(
+   { "type" : "group","title" : { $regex : /KENDRIYA/i }},
+   { $addToSet: {"tags":"kv"} },false,true
+)
+db.getCollection('fields_current.node').find({"type" : "group","location.province" : "delhi","tags": { $nin: ["GOVT","SARVODAYA"] }},{nid:1,title:1,tags:1}).count()
+================To Remove content============================
+db.getCollection('fields_current.node').remove({ "title" : "Contact Information"})
+db.getCollection('fields_current.node').remove({ "title" : "Admission Procedure and Fees Details"})
+db.getCollection('fields_current.node').remove({ "title" : "Faculty and Staff Members"})
+db.getCollection('fields_current.node').remove({ "title" : "School Virtual Tour"})
+db.getCollection('fields_current.node').remove({ "title" : "Houses In The School"})
+db.getCollection('fields_current.node').remove({ "title" : "School Infrastructure"})
+db.getCollection('fields_current.node').remove({ "title" : "News and Updates"})
+db.getCollection('fields_current.node').remove({ "title" : "Academic, Sports and Other Facilities"})
+db.getCollection('fields_current.node').remove({ "title" : "Principal Message"})
+db.getCollection('fields_current.node').remove({ "title" : "Extra Cirricular Activities"})
+db.getCollection('fields_current.node').remove({ "title" : "Academic Results"})
+db.getCollection('fields_current.node').remove({ "title" : "Hostel, Residential Facilities"})
+db.getCollection('fields_current.node').remove({ "title" : "Achivements and Awards"})
+db.getCollection('fields_current.node').remove({ "title" : "Distinguished Students"})
+db.getCollection('fields_current.node').remove({ "title" : "About Us"})
+db.getCollection('fields_current.node').remove({ "title" : "Contact Us"})
+
+
+db.getCollection('fields_current.node').update({},{$set:{"status" : 1}},false,true);
+
+/usr/bin/mongoimport -d spedia -c sp_fee_data --headerline --type csv --file /tmp/school_delhi_new.csv
+
+/usr/bin/mongoimport -d spedia -c sp_doe_data --headerline --type csv --file /tmp/school_delhi_new_doe.csv
+
+
+/usr/bin/mongoimport -d spedia -c sp_900 --headerline --type csv --file /tmp/school_delhi_900.csv
+
+
+/usr/bin/mongoexport -d spedia -c fields_current.node -q '{"src":"bulk_900"}' /tmp/bulk_900.json
+
+./mongoimport -d spedia -c fields_current.node /tmp/bulk_900.json

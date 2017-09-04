@@ -106,7 +106,9 @@ public class ContentController extends BaseWSController{
 		DBObject content = mongoDao.getContentByURL(url);
 		if (content != null) {
 			Integer nid = (Integer) content.get("nid");
-			List<Reviews> reviews = reviewsDao.findByNid(nid, 10);
+			//Todo
+			//List<Reviews> reviews = reviewsDao.findByNid(nid, 10);
+			List<Reviews> reviews= new ArrayList<Reviews>();
 			BasicDBObject basicDBObject = new BasicDBObject(
 					"field_group.target_id", nid);
 			DBCursor dbCursor = mongoDao.getContent(basicDBObject);

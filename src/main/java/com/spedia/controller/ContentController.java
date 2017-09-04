@@ -172,6 +172,7 @@ public class ContentController extends BaseWSController{
 	@ExceptionHandler(Exception.class)
 	@RequestMapping(value = { "/404.html","/403.html","/500.html" }, method = { RequestMethod.GET })
 	public ModelAndView handleAllException(Exception ex) {
+		ex.printStackTrace();
 		ModelAndView view = new ModelAndView("404");
 		Map<String, Object> model = new HashMap<String, Object>();
 		getLatestContent(model);

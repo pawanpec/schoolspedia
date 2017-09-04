@@ -45,7 +45,7 @@ window.fbAsyncInit = function() {
 										.log('User cancelled login or did not fully authorize.');
 							}
 						}, {
-							scope : 'email,public_profile,user_about_me,user_activities,user_birthday,user_education_history,user_friends,user_location,user_work_history,manage_notifications'
+							scope : 'email,public_profile,user_about_me,user_birthday,user_education_history,user_friends,user_location,user_work_history'
 						});
 
 	}

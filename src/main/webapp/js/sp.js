@@ -24,7 +24,7 @@ var compareUrl="/spedia/compare-school.html?ids="+compareSchoolData;
 window.location=compareUrl;
 }
 function registerUser(data) {
-	var queryString = "?data=" + encodeURIComponent(data) + "&socialType=fb";
+	var queryString = "?data="+JSON.stringify(data) + "&socialType=fb";
 	var aurl = "/spedia/registerUser.html" + queryString;
 	$.ajax({
 		url : aurl,

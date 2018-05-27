@@ -99,22 +99,10 @@ function formSubmit() {
 						href="/spedia/searchSchool.html"><img
 							src="<%=WebConstants.IMAGE_URL%>images/spacer.gif" /><span>Search
 								School</span></a><i class="bot"></i></li>
-					<li class="jobs"><i class="top"></i><a
-						href="/nursery-admission"><img
-							src="<%=WebConstants.IMAGE_URL%>images/spacer.gif" /><span>Nursery
-								Admission</span></a><i class="bot"></i></li>
 					<li class="interview"><i class="top"></i><a
 						href="/summer-camp"><img
 							src="<%=WebConstants.IMAGE_URL%>images/spacer.gif" /><span>Summer
 								Camp</span></a><i class="bot"></i></li>
-					<li class="interview"><i class="top"></i><a
-						href="/school-jobs"><img
-							src="<%=WebConstants.IMAGE_URL%>images/spacer.gif" /><span>School 
-								jobs</span></a><i class="bot"></i></li>
-					<li class="insights"><i class="top"></i><a
-						href="/forum/category/10/nursery-admission-delhi"><img
-							src="<%=WebConstants.IMAGE_URL%>images/spacer.gif" /><span>Forum
-								</span></a><i class="bot"></i></li>
 					
 					
 				</ul>

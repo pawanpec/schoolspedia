@@ -76,7 +76,6 @@
 		<div class="details_grid">
 			<%@include file="school_main_image.jsp"%>
 			<%@include file="school_main_content.jsp"%>
-			<%@include file="../adsense_728_90.jsp"%>
 			<%@include file="schoolOverview.jsp"%>
 			<div class="adsense-336">
 			<div class="adsense-336-l"><%@include file="../adsense_336_280.jsp"%></div>
@@ -89,7 +88,6 @@
 			<c:if test="${not empty reviews}">
 				<%@include file="schoolReviewWidget.jsp"%>
 			</c:if>
-			<%@include file="../adsense_728_90.jsp"%>
 			<%@include file="schoolmap.jsp"%>
 			<c:forEach items="${content.tags}" var="tag">	
 			<a href="#">${tag}</a> |

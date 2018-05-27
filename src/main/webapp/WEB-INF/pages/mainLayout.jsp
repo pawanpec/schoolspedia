@@ -80,6 +80,16 @@ var compareSchoolData = [];
 	href="http://schoolspedia.com/sites/default/files/sp_mailer_static/sp_cms1.css"
 	rel="stylesheet" type="text/css" />
 <meta name="google-site-verification" content="nTGysMFL1hut1kYFbMcXB5KTTSbt0Ixso9zAKD4oB5w" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116669805-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116669805-1');
+</script>
+
 </head>
 <body>
 	<div id="fb-root"></div>

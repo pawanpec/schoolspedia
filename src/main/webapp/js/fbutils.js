@@ -51,7 +51,7 @@ window.fbAsyncInit = function() {
 	}
 
 	function getUserInfo() {
-		FB.api('/me',,{fields: 'name,id,email'}, function(response) {
+		FB.api('/me', function(response) {
 			//console.log(JSON.stringify(response));
 			registerUser(JSON.stringify(response));
 			//location.reload();

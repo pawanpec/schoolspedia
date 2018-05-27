@@ -84,7 +84,7 @@ $appId = '191358334217968';
         });
    };
   function getUserInfo() {
-        FB.api('/me',{fields: 'name,id,email'}, function(response) {
+        FB.api('/me', {fields: 'name,id,email'}, function(response) {
         console.log("User "+JSON.stringify(response));
       var str="<b>Name</b> : "+response.name+"<br>";
           str +="<b>Link: </b>"+response.link+"<br>";

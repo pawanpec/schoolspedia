@@ -77,10 +77,6 @@
 			<%@include file="school_main_image.jsp"%>
 			<%@include file="school_main_content.jsp"%>
 			<%@include file="schoolOverview.jsp"%>
-			<div class="adsense-336">
-			<div class="adsense-336-l"><%@include file="../adsense_336_280.jsp"%></div>
-			<div class="adsense-336-l"><%@include file="../adsense_336_280.jsp"%></div>
-			</div>
 			<br></br>
 			<c:if test="${content.location.province eq 'delhi'}">
 					<%@include file="admissionPage.jsp"%>
@@ -101,7 +97,6 @@
 			<%@include file="schoolNews.jsp"%>
 		</c:if>
 
-		<%@include file="../adsense_336_280.jsp"%>
 		<br>
 		<c:if test="${not empty relatedSchool}">
 		<%@include file="relatedSchool.jsp"%>
